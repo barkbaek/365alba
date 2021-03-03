@@ -1,0 +1,25 @@
+#edit-albareview-form {
+    text-align:left;
+    font-size:13px;
+}
+#edit-albareview-submit {
+    margin-top:10px;
+}
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px 20px;
+    width:100%;
+}
+.box {
+    padding: 0 20px 10px 20px;
+}
+label, .label {
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+textarea {
+    border:1px solid #ebebeb;
+    margin-top:0;
+}

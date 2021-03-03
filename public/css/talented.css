@@ -1,0 +1,122 @@
+#resumesite {
+    width:100%;
+    max-width:990px;
+    margin:0 auto;
+}
+#detail-search-form {
+    width:100%;
+    text-align:left;
+    padding:0 10px 10px 10px;
+    border:1px solid #ababab;
+    font-size:12px;
+}
+#detail-search-submit {
+    width:auto;
+    margin-top:10px;
+    display:block;
+}
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px 0;
+    width:100%;
+    text-align:left;
+}
+label,
+.label {
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+input[type="radio"] {
+    width:auto;
+}
+label.inline-label {
+    width:auto;
+    display:inline-block;
+    margin-right:10px;
+    margin-top:0;
+    margin-bottom:0;
+}
+select {
+    margin-bottom:0;
+    font-size:12px;
+}
+#resume-info {
+    width:100%;
+    text-align:left;
+}
+.resume {
+    text-align:left;
+    border-left:1px solid #ebebeb;
+    border-right:1px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
+    padding:10px;
+    clear:both;
+    display:table;
+    cursor:pointer;
+}
+.resume:hover {
+    background:#ebebeb;
+}
+.resume-left {
+    display:table-cell;
+    width:100px;
+}
+.resume-right {
+    display:table-cell;
+    padding-left:10px;
+    vertical-align:top;
+    width:100%;
+}
+.photo {
+    width:100px;
+    height:100px;
+    border:1px solid #ebebeb;
+    display:inline-block;
+}
+.resume-updated-at {
+    font-size:11px;
+    color:#787878;
+    margin-bottom:5px;
+}
+.resume-name {
+    font-size:12px;
+    font-weight:bold;
+}
+.resume-title {
+    font-size:14px;
+    margin-bottom:7px;
+}
+.resume-phone,
+.resume-email,
+.resume-address,
+.resume-final-education,
+.resume-career-months {
+    font-size:12px;
+    margin-top:7px;
+    margin-bottom:7px;
+}
+.resume-scrap {
+    float:right;
+    font-size:12px;
+    margin-left:10px;
+}
+.resume-scrap img{
+    width:18px;
+    height:18px;
+}
+#pagination-box {
+    width:100%;
+    text-align:center;
+    margin:10px auto;
+}
+.pagination-a {
+    margin:0 5px;
+    display:inline-block;
+}
+.pagination {
+    display:inline-block;
+    padding:10px 15px;
+    border:1px solid #ebebeb;
+}

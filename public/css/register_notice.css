@@ -1,0 +1,39 @@
+#register-notice-form {
+    text-align:left;
+    font-size:13px;
+}
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px 20px;
+    width:100%;
+}
+.box {
+    padding:0 20px 10px 20px;
+}
+label,
+.label {
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+input[type="radio"] {
+    width:auto;
+}
+label.inline-label {
+    width:auto;
+    display:inline-block;
+    margin-right:20px;
+}
+#the-number-of-recruitment,
+#salary {
+    width:150px;
+    display:inline-block;
+    margin-right:10px;
+}
+input[type="checkbox"] {
+    margin-bottom:0;
+}
+#update-map {
+    margin:10px 0;
+}

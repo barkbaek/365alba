@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/service.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/event.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta name="date" content="2020-06-01" scheme="YYYY-MM-DD">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{published_date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body">
+    <!-- Mobile menu -->
+    <div id="mobile-menu">
+        <a href="/">
+            <div id="mobile-menu-middle-logo">
+                <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}">
+            </div>
+        </a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <!-- Mobile right menu -->
+    <div id="mobile-right-menu">
+        <div class="close">
+            <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+        </div>
+        <div class="login-item">
+            {{#if is_loggedin}}
+                <div class="login-item-description">
+                    <span>{{nick_name}}</span>님
+                    <div style="margin-top:10px;">&nbsp;<span>포인트</span>{{points}}&nbsp;<a href="/charge-points" style="text-decoration:underline;">충전하기</a></div>
+                </div>
+                <a href="/logout">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그아웃</span>
+                    </div>
+                </a>
+            {{else}}
+                <div class="login-item-description">로그인 해주세요.</div>
+                <a href="/login">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그인</span>
+                    </div>
+                </a>
+            {{/if}}
+            <div class="login-item-bottom">
+                <div class="forgot-password">
+                    <a href="/forgot-password"><span>비밀번호 찾기</span></a>
+                </div>
+                <div class="register">
+                    <a href="/register"><span>회원가입</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="service-title">
+                <span>채용정보</span>
+            </div>
+            {{#each menu1}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>인재정보</span>
+            </div>
+            {{#each menu2}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바플러스</span>
+            </div>
+            {{#each menu3}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바백과</span>
+            </div>
+            {{#each menu4}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>이벤트</span>
+            </div>
+            {{#each menu5}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            {{#if is_loggedin}}
+                {{#if is_user}}
+                    <div class="service-title">
+                        <span>개인서비스</span>
+                    </div>
+                    {{#each menu6}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{else}}
+                    <div class="service-title">
+                        <span>기업서비스</span>
+                    </div>
+                    {{#each menu7}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="body-frame">
+        <div class="body-main">
+            <!-- Top logo and search feature -->
+            <div id="top">
+                <div id="top-most-frame" class="desktop-only">
+                    <div id="top-most">
+                        {{#if is_loggedin}}
+                            <div class="top-most-item"><a href="/logout">로그아웃</a></div>
+                            <div class="top-most-item"><a href="/member-information">회원정보</a></div>
+                        {{else}}
+                            <div class="top-most-item"><a href="/register">회원가입</a></div>
+                            <div class="top-most-item"><a href="/login">로그인</a></div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div id="top-main">
+                    <div id="top-logo-wrapper">
+                        <a href="/">
+                            <img id="top-logo" class="animated swing" src="{{aws_s3_url}}/icons/logo.jpeg" alt="365알바" title="365알바">
+                            <span>이벤트</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="service">
+                <div class="title">이벤트</div>
+                {{#with doc}}
+                    <div id="event">
+                        <div id="event-title">{{title}}</div>
+                        <div id="event-top">
+                            <div id="count-view">조회수&nbsp;{{count_view}}</div>
+                            <div>help@365alba.com&nbsp;|&nbsp;{{start_year}}.{{start_month}}.{{start_day}}&nbsp;~&nbsp;{{end_year}}.{{end_month}}.{{end_day}}</div>
+                        </div>
+                        <div id="event-content">
+                            <img id="content" src="{{content_image}}">
+                        </div>
+                    </div>
+                {{/with}}
+            </div>
+            <!-- Footer -->
+            <div id="footer">
+                <!--
+                <a href="/announcement">
+                    <div class="footer-item">공지사항</div>
+                </a>
+                <a href="/policy">
+                    <div class="footer-item">데이터 정책</div>
+                </a>
+                <a href="/terms">
+                    <div class="footer-item">서비스 이용 약관</div>
+                </a>-->
+                <div>상호: 365알바 대표: 백병화 사업자번호: 183-11-01464</div>
+                <div>주소: 경기도 용인시 기흥구 사은로 56 은성빌딩 201호</div>
+                <div id="copyright">Copyright © 365alba.com. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/area.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/business_type.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/event.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+</body>
+</html>

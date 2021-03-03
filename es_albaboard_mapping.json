@@ -1,0 +1,89 @@
+{
+  "settings":{
+    "analysis":{
+      "tokenizer":{
+        "korean_nori_tokenizer":{
+          "type":"nori_tokenizer",
+          "decompound_mode":"mixed",
+          "user_dictionary":"user_dictionary.txt"
+        }
+      },
+      "analyzer":{
+        "nori_analyzer":{
+          "type":"custom",
+          "tokenizer":"korean_nori_tokenizer",
+          "filter":[
+            "nori_posfilter",
+            "nori_readingform",
+            "synonym_filtering",
+            "stop_filtering"
+          ]
+        }
+      },
+      "filter":{
+        "nori_posfilter":{
+          "type":"nori_part_of_speech",
+          "stoptags":[
+            "E","IC","J","MAG","MM","NA","NR","SC",
+            "SE","SF","SH","SL","SN","SP","SSC","SSO",
+            "SY","UNA","UNKNOWN","VA","VCN","VCP","VSV",
+            "VV","VX","XPN","XR","XSA","XSN","XSV"
+          ]
+        },
+        "synonym_filtering":{
+          "type":"synonym"
+        ,"synonyms_path":"synonymsFilter.txt"
+        },
+        "stop_filtering":{
+          "type":"stop"
+        ,"stopwords_path":"stopFilter.txt"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_source": {
+      "enabled": true
+    },
+    "properties": {
+      "article_id": {
+        "type": "keyword"
+      },
+      "user_id": {
+        "type": "keyword"
+      },
+      "nick_name": {
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text",
+        "term_vector": "with_positions_offsets",
+        "index": true,
+        "analyzer": "nori_analyzer"
+      },
+      "content": {
+        "type": "text",
+        "term_vector": "with_positions_offsets",
+        "index": true,
+        "analyzer": "nori_analyzer"
+      },
+      "tags" : {
+        "type" : "text",
+        "term_vector": "with_positions_offsets",
+        "index" : true,
+        "analyzer": "nori_analyzer",
+        "fields": {
+          "keyword" : {
+            "type" : "keyword"
+          }
+        }
+      },
+      "created_at": {
+        "type": "date"
+      },
+      "updated_at": {
+        "type": "date"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#service {
+    text-align:left;
+    padding:10px;
+    border:1px solid #ebebeb;
+    font-size:15px;
+}
+.title {
+    font-size:24px;
+    margin-bottom:10px;
+}
+.label {
+    font-size:18px;
+}

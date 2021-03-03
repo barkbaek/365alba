@@ -1,0 +1,111 @@
+#resume {
+    width:100%;
+    max-width:990px;
+    margin:10px auto;
+    text-align:left;
+    border:1px solid #ebebeb;
+    padding:10px;
+    clear:both;
+}
+.resume-updated-at {
+    width:100%;
+    text-align:left;
+    font-size:12px;
+}
+.resume-title {
+    font-size:18px;
+    width:100%;
+    text-align:center;
+    margin-bottom:10px;
+}
+.resume-middle {
+    display:table;
+}
+.resume-bottom {
+    border-top:1px solid #ebebeb;
+    padding-top:10px;
+    text-align:left;
+}
+.resume-left {
+    display:table-cell;
+    width:100px;
+}
+.resume-right {
+    display:table-cell;
+    padding-left:10px;
+    vertical-align:top;
+    width:100%;
+}
+.photo {
+    width:100px;
+    height:100px;
+    border:1px solid #ebebeb;
+    display:inline-block;
+}
+.resume-right-box,
+.resume-bottom-box,
+.resume-content-box {
+    display:block;
+    width:100%;
+    text-align:left;
+    margin-bottom:10px;
+}
+.resume-bottom-box,
+.resume-content-box {
+    margin-bottom:20px;
+}
+.resume-name {
+    font-size:16px;
+    font-weight:bold;
+    margin-right:5px;
+}
+.resume-age {
+    font-size:12px;
+}
+.resume-label {
+    font-size:14px;
+    font-weight:bold;
+    margin-right:20px;
+}
+.resume-content {
+    font-size:14px;
+}
+.resume-big-label {
+    font-size:18px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+.resume-scrap {
+    float:right;
+    font-size:12px;
+    margin-left:10px;
+}
+.resume-scrap img{
+    width:24px;
+    height:24px;
+}
+.btn-wrapper {
+    width:100%;
+    margin:10px 0 5px 0;
+    text-align:center;
+}
+#btn-confirm,
+.btn-cancel {
+    display:inline-block;
+    margin:10px 10px 0 10px;
+    width:auto;
+    padding:8px 15px;
+    font-size:12px;
+    line-height:1.3em;
+    background:#58bcea;
+    border-color:#58bcea;
+    border:0;
+    color:#ffffff;
+    -webkit-appearance:none;
+    cursor:pointer;
+}
+#btn-confirm:hover,
+.btn-cancel:hover{
+    background: #4eb2e0;
+    color:#ffffff;
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/service.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/register_notice.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta name="date" content="2020-06-01" scheme="YYYY-MM-DD">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{published_date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body">
+    <!-- Mobile menu -->
+    <div id="mobile-menu">
+        <a href="/">
+            <div id="mobile-menu-middle-logo">
+                <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}">
+            </div>
+        </a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <!-- Mobile right menu -->
+    <div id="mobile-right-menu">
+        <div class="close">
+            <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+        </div>
+        <div class="login-item">
+            {{#if is_loggedin}}
+                <div class="login-item-description">
+                    <span>{{nick_name}}</span>님
+                    <div style="margin-top:10px;">&nbsp;<span>포인트</span>{{points}}&nbsp;<a href="/charge-points" style="text-decoration:underline;">충전하기</a></div>
+                </div>
+                <a href="/logout">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그아웃</span>
+                    </div>
+                </a>
+            {{else}}
+                <div class="login-item-description">로그인 해주세요.</div>
+                <a href="/login">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그인</span>
+                    </div>
+                </a>
+            {{/if}}
+            <div class="login-item-bottom">
+                <div class="forgot-password">
+                    <a href="/forgot-password"><span>비밀번호 찾기</span></a>
+                </div>
+                <div class="register">
+                    <a href="/register"><span>회원가입</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="service-title">
+                <span>채용정보</span>
+            </div>
+            {{#each menu1}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>인재정보</span>
+            </div>
+            {{#each menu2}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바플러스</span>
+            </div>
+            {{#each menu3}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바백과</span>
+            </div>
+            {{#each menu4}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>이벤트</span>
+            </div>
+            {{#each menu5}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            {{#if is_loggedin}}
+                {{#if is_user}}
+                    <div class="service-title">
+                        <span>개인서비스</span>
+                    </div>
+                    {{#each menu6}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{else}}
+                    <div class="service-title">
+                        <span>기업서비스</span>
+                    </div>
+                    {{#each menu7}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="body-frame">
+        <div class="body-main">
+            <!-- Top logo and search feature -->
+            <div id="top">
+                <div id="top-most-frame" class="desktop-only">
+                    <div id="top-most">
+                        {{#if is_loggedin}}
+                            <div class="top-most-item"><a href="/logout">로그아웃</a></div>
+                            <div class="top-most-item"><a href="/member-information">회원정보</a></div>
+                        {{else}}
+                            <div class="top-most-item"><a href="/register">회원가입</a></div>
+                            <div class="top-most-item"><a href="/login">로그인</a></div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div id="top-main">
+                    <div id="top-logo-wrapper">
+                        <a href="/">
+                            <img id="top-logo" class="animated swing" src="{{aws_s3_url}}/icons/logo.jpeg" alt="365알바" title="365알바">
+                            <span>공고수정</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu -->
+            <div class="menu desktop-only">
+                <ul class="menu-ul">
+                    <a href="/register-notice"><li class="menu-li">공고등록</li></a>
+                    <a href="/manage-notices"><li class="menu-li">공고·지원자관리</li></a>
+                    <a href="/charged-products"><li class="menu-li">유료상품</li></a>
+                    <a href="/scrap-alba"><li class="menu-li">스크랩알바</li></a>
+                    <a href="/manage-my-articles"><li class="menu-li">내가쓴글관리</li></a>
+                    <a href="/charge-use-details"><li class="menu-li">유료이용내역</li></a>
+                    <a href="/member-information"><li class="menu-li">회원정보</li></a>
+                </ul>
+            </div>
+            <div id="service">
+                <form id="register-notice-form">
+                    <div class="title">모집내용</div>
+                    <div class="box">
+                        <label for="title">공고제목</label>
+                        <input id="title" type="text" placeholder="공고제목을 입력하세요">
+                        <label for="company-name">회사명</label>
+                        <input id="company-name" type="text" placeholder="365알바">
+                        <div class="radio-toolbar">
+                            <div class="label">고용형태</div>
+                            <input type="radio" id="alba" name="employment-type" value="alba" checked>
+                            <label class="inline-label" for="alba">알바</label>
+                            <input type="radio" id="permanent" name="employment-type" value="permanent">
+                            <label class="inline-label" for="permanent">정규직</label>
+                            <input type="radio" id="contract" name="employment-type" value="contract">
+                            <label class="inline-label" for="contract">계약직</label>
+                            <input type="radio" id="intern" name="employment-type" value="intern">
+                            <label class="inline-label" for="intern">인턴</label>
+                        </div>
+                        <label for="business-type-big">업직종</label>
+                        <select id="business-type-big"></select>
+                        <select id="business-type-small"></select>
+                        <label for="the-number-of-recruitment">모집인원</label>
+                        <input id="the-number-of-recruitment" type="number" placeholder="숫자만 입력하세요">명
+                        <div class="label">급구알바</div>
+                        <input type="checkbox" id="is_express" name="is_express" value="is_express" checked>
+                        <label class="inline-label" for="is_express">급구알바</label>
+                    </div>
+                    <div class="title">근무조건</div>
+                    <div class="box">
+                        <div class="radio-toolbar">
+                            <div class="label">근무기간</div>
+                            <input type="radio" id="1day" name="work-period" value="1day">
+                            <label class="inline-label" for="1day">하루</label>
+                            <input type="radio" id="1week" name="work-period" value="1week">
+                            <label class="inline-label" for="1week">일주일이하</label>
+                            <input type="radio" id="1month" name="work-period" value="1month">
+                            <label class="inline-label" for="1month">1주일~1개월</label>
+                            <input type="radio" id="3months" name="work-period" value="3months" checked>
+                            <label class="inline-label" for="3months">1개월~3개월</label>
+                            <input type="radio" id="6months" name="work-period" value="6months">
+                            <label class="inline-label" for="6months">3개월~6개월</label>
+                            <input type="radio" id="1year" name="work-period" value="1year">
+                            <label class="inline-label" for="1year">6개월~1년</label>
+                            <input type="radio" id="over_1year" name="work-period" value="over_1year">
+                            <label class="inline-label" for="over_1year">1년이상</label>
+                        </div>
+                        <label for="work-start-year">근무시작일</label>
+                        <select id="work-start-year"></select>년
+                        <select id="work-start-month"></select>월
+                        <select id="work-start-day"></select>일
+                        <label for="work-end-year">근무마감일</label>
+                        <select id="work-end-year"></select>년
+                        <select id="work-end-month"></select>월
+                        <select id="work-end-day"></select>일
+                        <div class="label">근무요일</div>
+                        <input type="checkbox" id="sun" name="work-days" value="일">
+                        <label class="inline-label" for="sun">일</label>
+                        <input type="checkbox" id="mon" name="work-days" value="월">
+                        <label class="inline-label" for="mon">월</label>
+                        <input type="checkbox" id="tue" name="work-days" value="화">
+                        <label class="inline-label" for="tue">화</label>
+                        <input type="checkbox" id="wed" name="work-days" value="수">
+                        <label class="inline-label" for="wed">수</label>
+                        <input type="checkbox" id="thu" name="work-days" value="목">
+                        <label class="inline-label" for="thu">목</label>
+                        <input type="checkbox" id="fri" name="work-days" value="금">
+                        <label class="inline-label" for="fri">금</label>
+                        <input type="checkbox" id="sat" name="work-days" value="토">
+                        <label class="inline-label" for="sat">토</label>
+                        <label for="work-start-time">근무시간</label>
+                        <select id="work-start-time"></select>&nbsp;~&nbsp;
+                        <select id="work-end-time"></select>
+                        <label for="salary-type">급여</label>
+                        <select id="salary-type">
+                            <option selected="selected" value="hour">시급</option>
+                            <option value="day">일급</option>
+                            <option value="week">주급</option>
+                            <option value="month">월급</option>
+                            <option value="year">연봉</option>
+                            <option value="per">건별</option>
+                        </select>
+                        <input id="salary" type="number" placeholder="숫자만 입력하세요">원
+                    </div>
+                    <div class="title">지원조건</div>
+                    <div class="box">
+                        <div class="radio-toolbar">
+                            <div class="label">성별</div>
+                            <input type="radio" id="none" name="sex" value="none" checked>
+                            <label class="inline-label" for="none">성별무관</label>
+                            <input type="radio" id="male" name="sex" value="male">
+                            <label class="inline-label" for="male">남자</label>
+                            <input type="radio" id="female" name="sex" value="female">
+                            <label class="inline-label" for="female">여자</label>
+                        </div>
+                        <label for="age-start">연령</label>
+                        <select id="age-start"></select>&nbsp;~&nbsp;
+                        <select id="age-end"></select>
+                        <div class="label">대학생</div>
+                        <input type="checkbox" id="university-student" name="university-student" value="university-student" checked>
+                        <label class="inline-label" for="university-student">대학생 고용</label>
+                        <div class="label">장애인</div>
+                        <input type="checkbox" id="disabled-person" name="disabled-person" value="disabled-person" checked>
+                        <label class="inline-label" for="disabled-person">장애인 고용</label>
+                        <div class="label">외국인</div>
+                        <input type="checkbox" id="foreigner" name="foreigner" value="foreigner" checked>
+                        <label class="inline-label" for="foreigner">외국인 고용</label>
+                        <label for="educational-background">학력조건</label>
+                        <select id="educational-background">
+                            <option selected="selected" value="none">학력무관</option>
+                            <option value="primary">초등학교졸업</option>
+                            <option value="middle">중학교졸업</option>
+                            <option value="high">고등학교졸업</option>
+                            <option value="university2">대학교2,3년제졸업</option>
+                            <option value="university4">대학교4년제졸업</option>
+                            <option value="graduate">대학원졸업</option>
+                        </select>
+                    </div>
+                    <div class="title">접수기간 및 방법</div>
+                    <div class="box">
+                        <label for="finish-year">모집종료일</label>
+                        <select id="finish-year"></select>년
+                        <select id="finish-month"></select>월
+                        <select id="finish-day"></select>일
+                        <div class="label">접수방법</div>
+                        <input type="checkbox" id="online" name="receipt-methods" value="online" checked>
+                        <label class="inline-label" for="online">온라인지원</label>
+                        <input type="checkbox" id="apply-email" name="receipt-methods" value="email">
+                        <label class="inline-label" for="apply-email">이메일지원</label>
+                        <input type="checkbox" id="phone_message" name="receipt-methods" value="phone_message">
+                        <label class="inline-label" for="phone_message">전화문자지원</label>
+                        <input type="checkbox" id="apply-homepage" name="receipt-methods" value="homepage" checked>
+                        <label class="inline-label" for="apply-homepage">홈페이지</label>
+                        <input type="checkbox" id="visit" name="receipt-methods" value="visit">
+                        <label class="inline-label" for="visit">바로방문</label>
+                        <label for="homepage">홈페이지</label>
+                        <input id="homepage" type="text" placeholder="http://www.365alba.com">
+                    </div>
+                    <div class="title">담당자 정보</div>
+                    <div class="box">
+                        <label for="manager-name">담당자명</label>
+                        <input id="manager-name" type="text" placeholder="홍길동">
+                        <label for="email">이메일</label>
+                        <input id="email" type="text" placeholder="이메일">
+                        <label for="phone">전화번호</label>
+                        <input id="phone" type="text" placeholder="010-0000-0000">
+                        <label for="fax">팩스</label>
+                        <input id="fax" type="text" placeholder="000-000-0000">
+                    </div>
+                    <div class="title">근무지 정보</div>
+                    <div class="box">
+                        <label for="address-si">근무지 주소</label>
+                        <select id="address-si"></select>
+                        <select id="address-goo"></select>
+                        <select id="address-dong"></select>
+                        <input id="address-detail" type="text" placeholder="상세주소">
+                        <input type="button" id="update-map" value="지도업데이트">
+                        <div id="map" style="width:100%;height:350px;"></div>
+                        <label for="exposure-area-si">공고노출지역</label>
+                        <select id="exposure-area-si"></select>
+                        <select id="exposure-area-goo"></select>
+                        <select id="exposure-area-dong"></select>
+                        <label for="near-subway">인근지하철</label>
+                        <input id="near-subway" type="text" placeholder="상갈역">
+                        <label for="near-university">인근대학교</label>
+                        <input id="near-university" type="text" placeholder="강남대학교">
+                    </div>
+                    <input id="register-notice-submit" type="submit" value="등록완료">
+                </form>
+            </div>
+            <!-- Footer -->
+            <div id="footer">
+                <!--
+                <a href="/announcement">
+                    <div class="footer-item">공지사항</div>
+                </a>
+                <a href="/policy">
+                    <div class="footer-item">데이터 정책</div>
+                </a>
+                <a href="/terms">
+                    <div class="footer-item">서비스 이용 약관</div>
+                </a>-->
+                <div>상호: 365알바 대표: 백병화 사업자번호: 183-11-01464</div>
+                <div>주소: 경기도 용인시 기흥구 사은로 56 은성빌딩 201호</div>
+                <div id="copyright">Copyright © 365alba.com. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/area.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/business_type.js{{js_version}}"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3965d8a61e46a5bdf2c709aa1de22705&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="/js/main/edit_company.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/map.js{{js_version}}"></script>
+</body>
+</html>

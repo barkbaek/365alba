@@ -1,0 +1,143 @@
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px;
+    width:100%;
+    text-align:left;
+}
+.company-info {
+    text-align:left;
+    border:1px solid #ebebeb;
+    border-top:0;
+    border-bottom:2px solid #58bcea;
+    padding:10px;
+}
+.company-title {
+    font-size:18px;
+}
+.company-detail {
+    font-size:12px;
+    margin-top:10px;
+    color:#787878;
+}
+.resume {
+    border:1px solid #ebebeb;
+    border-top:0;
+    text-align:left;
+    padding:10px;
+    display:table;
+    cursor:pointer;
+}
+.applicant {
+    width:100%;
+}
+.resume:hover {
+    background:#ebebeb;
+}
+.applicant-created-at {
+    width:100%;
+    text-align:left;
+    font-size:12px;
+}
+.applicant-middle {
+    display:table;
+}
+.resume-left,
+.applicant-left {
+    display:table-cell;
+    width:100px;
+}
+.resume-right,
+.applicant-right {
+    display:table-cell;
+    padding-left:10px;
+    vertical-align:top;
+    width:100%;
+}
+.applicant-right-box,
+.applicant-bottom-box,
+.applicant-content-box {
+    display:block;
+    width:100%;
+    text-align:left;
+    margin-bottom:5px;
+}
+.applicant-bottom-box,
+.applicant-content-box {
+    margin-bottom:10px;
+}
+.applicant-title {
+    font-size:18px;
+    width:100%;
+    text-align:left;
+}
+.applicant-name {
+    font-size:16px;
+    font-weight:bold;
+    margin-right:5px;
+}
+.applicant-age {
+    font-size:12px;
+}
+.applicant-label {
+    font-size:12px;
+    font-weight:bold;
+    margin-right:20px;
+}
+.applicant-content {
+    font-size:12px;
+}
+.applicant-bottom {
+    border-top:1px solid #ebebeb;
+    padding-top:10px;
+    text-align:left;
+}
+.applicant-big-label {
+    font-size:18px;
+}
+.photo {
+    width:100px;
+    height:100px;
+    border:1px solid #ebebeb;
+    display:inline-block;
+}
+.space {
+    margin-left:10px;
+    margin-right:10px;
+}
+.finished {
+    font-weight:bold;
+    color:#58bcea;
+    margin-right:5px;
+}
+.resume-name {
+    font-size:12px;
+    font-weight:bold;
+}
+.resume-title {
+    font-size:14px;
+    margin-bottom:7px;
+}
+.resume-phone,
+.resume-email,
+.resume-address,
+.resume-final-education,
+.resume-career-months {
+    font-size:12px;
+    margin-top:7px;
+    margin-bottom:7px;
+}
+#pagination-box {
+    width:100%;
+    text-align:center;
+    margin:10px auto;
+}
+.pagination-a {
+    margin:0 5px;
+    display:inline-block;
+}
+.pagination {
+    display:inline-block;
+    padding:10px 15px;
+    border:1px solid #ebebeb;
+}

@@ -1,0 +1,100 @@
+{
+  "settings":{
+    "analysis":{
+      "tokenizer":{
+        "korean_nori_tokenizer":{
+          "type":"nori_tokenizer",
+          "decompound_mode":"mixed",
+          "user_dictionary":"user_dictionary.txt"
+        }
+      },
+      "analyzer":{
+        "nori_analyzer":{
+          "type":"custom",
+          "tokenizer":"korean_nori_tokenizer",
+          "filter":[
+            "nori_posfilter",
+            "nori_readingform",
+            "synonym_filtering",
+            "stop_filtering"
+          ]
+        }
+      },
+      "filter":{
+        "nori_posfilter":{
+          "type":"nori_part_of_speech",
+          "stoptags":[
+            "E","IC","J","MAG","MM","NA","NR","SC",
+            "SE","SF","SH","SL","SN","SP","SSC","SSO",
+            "SY","UNA","UNKNOWN","VA","VCN","VCP","VSV",
+            "VV","VX","XPN","XR","XSA","XSN","XSV"
+          ]
+        },
+        "synonym_filtering":{
+          "type":"synonym"
+        ,"synonyms_path":"synonymsFilter.txt"
+        },
+        "stop_filtering":{
+          "type":"stop"
+        ,"stopwords_path":"stopFilter.txt"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_source": {
+      "enabled": true
+    },
+    "properties": {
+      "article_id": {
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text",
+        "term_vector": "with_positions_offsets",
+        "index": true,
+        "analyzer": "nori_analyzer"
+      },
+      "company_name": {
+        "type": "text",
+        "term_vector": "with_positions_offsets",
+        "index": true,
+        "analyzer": "nori_analyzer"
+      },
+      "employment_type": {
+        "type": "keyword"
+      },
+      "salary": {
+        "type": "integer",
+        "null_value": 0
+      },
+      "salary_type": {
+        "type": "keyword"
+      },
+      "finish_date": {
+        "type": "keyword"
+      },
+      "address": {
+        "type": "text",
+        "term_vector": "with_positions_offsets",
+        "index": true,
+        "analyzer": "nori_analyzer"
+      },
+      "near_subway": {
+        "type": "keyword"
+      },
+      "near_university": {
+        "type": "keyword"
+      },
+      "logo": {
+        "type": "keyword"
+      },
+      "created_at": {
+        "type": "date"
+      },
+      "updated_at": {
+        "type": "date"
+      }
+    }
+  }
+}

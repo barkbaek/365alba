@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/service.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/alba_encyclopedia.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta name="date" content="2020-06-01" scheme="YYYY-MM-DD">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{published_date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body">
+    <!-- Mobile menu -->
+    <div id="mobile-menu">
+        <a href="/">
+            <div id="mobile-menu-middle-logo">
+                <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}">
+            </div>
+        </a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <!-- Mobile right menu -->
+    <div id="mobile-right-menu">
+        <div class="close">
+            <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+        </div>
+        <div class="login-item">
+            {{#if is_loggedin}}
+                <div class="login-item-description">
+                    <span>{{nick_name}}</span>님
+                    <div style="margin-top:10px;">&nbsp;<span>포인트</span>{{points}}&nbsp;<a href="/charge-points" style="text-decoration:underline;">충전하기</a></div>
+                </div>
+                <a href="/logout">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그아웃</span>
+                    </div>
+                </a>
+            {{else}}
+                <div class="login-item-description">로그인 해주세요.</div>
+                <a href="/login">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그인</span>
+                    </div>
+                </a>
+            {{/if}}
+            <div class="login-item-bottom">
+                <div class="forgot-password">
+                    <a href="/forgot-password"><span>비밀번호 찾기</span></a>
+                </div>
+                <div class="register">
+                    <a href="/register"><span>회원가입</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="service-title">
+                <span>채용정보</span>
+            </div>
+            {{#each menu1}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>인재정보</span>
+            </div>
+            {{#each menu2}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바플러스</span>
+            </div>
+            {{#each menu3}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바백과</span>
+            </div>
+            {{#each menu4}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>이벤트</span>
+            </div>
+            {{#each menu5}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            {{#if is_loggedin}}
+                {{#if is_user}}
+                    <div class="service-title">
+                        <span>개인서비스</span>
+                    </div>
+                    {{#each menu6}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{else}}
+                    <div class="service-title">
+                        <span>기업서비스</span>
+                    </div>
+                    {{#each menu7}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="body-frame">
+        <div class="body-main">
+            <!-- Top logo and search feature -->
+            <div id="top">
+                <div id="top-most-frame" class="desktop-only">
+                    <div id="top-most">
+                        {{#if is_loggedin}}
+                            <div class="top-most-item"><a href="/logout">로그아웃</a></div>
+                            <div class="top-most-item"><a href="/member-information">회원정보</a></div>
+                        {{else}}
+                            <div class="top-most-item"><a href="/register">회원가입</a></div>
+                            <div class="top-most-item"><a href="/login">로그인</a></div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div id="top-main">
+                    <div id="top-logo-wrapper">
+                        <a href="/">
+                            <img id="top-logo" class="animated swing" src="{{aws_s3_url}}/icons/logo.jpeg" alt="365알바" title="365알바">
+                            <span>최저임금</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu -->
+            <div class="menu desktop-only">
+                <ul class="menu-ul">
+                    <a href="/minimum-wages"><li class="menu-li">최저임금</li></a>
+                    <a href="/four-major-social-insurance"><li class="menu-li">4대사회보험</li></a>
+                    <a href="/youth-labor-rights-center"><li class="menu-li">청소년근로권익센터</li></a>
+                    <a href="/prevent-employment-fraud"><li class="menu-li">취업사기예방</li></a>
+                    <a href="/wage-deferred-business-owners"><li class="menu-li">임금체불사업주</li></a>
+                </ul>
+            </div>
+            <div id="service">
+                <div class="title">2020년 최저임금 안내</div>
+                2020년 법정 최저임금액은 시급 8,590원이다. (적용년도 2020.1.1 ~ 2020.12.31)<br>
+                최저임금 제도는 임금의 최저수준을 정하며, 사용자(사업주 및 사업 경영담당자, 근로자에 관한 사항에 대하여 사업주를 위하여 행위하는 자)에게 이 수준 이상의 임금을 지급하도록 법으로 강제하는 제도이다.<br>
+                <br>
+                <div class="label">적용대상</div>
+                근로기준법상 근로자가(정규직, 비정규직, 외국인 근로자 등) 1명 이상인 모든 사업장에 적용된다.<br>
+                <br>
+                <div class="label">적용제외대상</div>
+                - 동거하는 친족만을 사용하는 사업과 가사사용인<br>
+                - 선원법의 적용을 받는 선원과 선원을 사용하는 선박의 소유자<br>
+                - 고용노동부장관의 인가를 받은 정신 또는 신체의 장애로 근로능력이 현저히 낮은 자<br>
+                <br>
+                <div class="label">적용예외대상</div>
+                - 수습 근로자: 최장 3개월간 최저임금의 10% 감액 적용 가능<br>
+                (근로계약 1년 미만 수습 근로자에 대해 최저임금 감액 불가)<br>
+                - 임금이 도급제나 그 밖에 이와 비슷한 형태인 경우 또는 시간/일/주/월을 단위로 하여 최저임금액을 정하는 것이 적합하지 않다고 인정되면 해당 근로자의 생산고 또는 업적의 일정 단위에 의해 최저임금 산정<br>
+                (도급 사업 시 수급인이 도급계약 체결 당시 또는 계약 기간 중 인건비 단가를 최저임금액 미만으로 결정한 경우 도급인은 해당 수급인과 최저임금법 위반의 연대책임을 진다.)<br>
+                <br>
+                <div class="label">최저임금 산입 임금</div>
+                매월 1회 이상 정기적/일률적으로 지급되는 임금에 대해 최저임금을 적용한다.<br>
+                <br>
+                <div class="label">최저임금 비산입 임금</div>
+                - 매월 1회 이상 정기적으로 지급하는 임금외 임금<br>
+                1개월을 초과하여 사유에 따라 지급하는 상여금 등<br>
+                - 소정근로시간 또는 소정의 근로일에 대하여 지급하는 임금외 임금<br>
+                연장/야간/휴일 근로수당 등<br>
+                - 생활보조 또는 복리후생을 위한 임금<br>
+                가족수당, 급식수당, 주택수당, 통근수당 등<br>
+                <br>
+                <div class="label">일반택시운송사업 운전업무근로자의 최저임금 산입범위</div>
+                - 단체 협약, 취업 규칙, 근로계약에 정해진 지급 조건과 지급률에 따라 월 1회 이상 지급<br>
+                - 소정의 근로시간근로일에 대해 지급하는 임금외 임금과 생활보조 및 복리후생을 지급하는 임금은 제외.<br>
+                시행 시기: 특별시/광역시/제주도시(2011.1.1), 기타지역(2012.7.1)<br>
+                <br>
+                <div class="label">사용자의 주지의무</div>
+                사용자는 최저임금액 등을 근로자가 쉽게 볼 수 있는 장소에 게시하거나 그 외 적당한 방법으로 근로자에게 널리 알려야 한다.<br>
+                알려야 할 내용:<br>
+                - 최저임금<br>
+                - 적용제외 근로자의 범위<br>
+                - 최저임금에 산입하지 아니하는 임금<br>
+                - 최저임금의 효력 발생년월일<br>
+                위 내용을 주지하지 않을 경우 100만원 이하의 과태료 부과<br>
+                <br>
+                최저임금 미만을 지급받기로 한 근로계약에 대해 최저임금액에 미치지 못하는 금액으로 정한 임금은 무효하며 최저임금액과 동일한 임금을 지급하여야 한다.<br>
+                <br>
+                최저임금을 위반할 경우 3년 이하의 징역 또는 2천만원 이하 벌금에 처해지거나, 이 두가지 벌칙을 같이 받을 수 있다.<br>
+                <br>
+                월급에 대한 최저임금 안내는 주휴수당을 포함하여 계산한 것으로 주 40시간/주 44시간 기준으로 예시한 금액이다.<br>
+                1) 주 40시간(주 5일, 1일 8시간)을 근무한 경우: {(근로시간 40시간 + 유급주휴 8시간) / 7일 X 365일} / 12개월 = 209시간<br>
+                2) 주 44시간(월~금 8시간, 토 4시간)을 근무한 경우: {(근로시간 44시간 + 유급주휴 8시간) / 7일 X 365일} / 12개월 = 226시간<br>
+                <br>
+                주휴수당은 주 15시간 이상 근무하는 근로자에게 1주일에 1회 이상의 유급휴일(통상일요일)을 부여하는데, 이러한 유급휴일에 지급하는 수당을 말한다.<br>
+                시급 8,590원에 1일 4시간, 1주일(5일)간 20시간 근로한 경우<br>
+                8,590원 X 24시간(주5일 20시간 + 유급주휴4시간)으로 계산하여 206,160원<br>
+                <br>
+                근로계약서에 명시한 근로시간 외 추가로 연장 및 야간 근로를 하였다면 시급의 50%를 각각 가산하여 임금을 받아야 한다. (근로자 5인 이상 사업장에 적용)<br>
+                연장 근로수당: 시급 + 50%<br>
+                야간 근로수당(오후 10시~익일 오전 6시): 시급 + 50%<br>
+                연장근로와 야간근로 시간이 겹칠 경우 중첩 적용 (시급 + 50% + 50%)<br>
+
+
+            </div>
+            <!-- Footer -->
+            <div id="footer">
+                <!--
+                <a href="/announcement">
+                    <div class="footer-item">공지사항</div>
+                </a>
+                <a href="/policy">
+                    <div class="footer-item">데이터 정책</div>
+                </a>
+                <a href="/terms">
+                    <div class="footer-item">서비스 이용 약관</div>
+                </a>-->
+                <div>상호: 365알바 대표: 백병화 사업자번호: 183-11-01464</div>
+                <div>주소: 경기도 용인시 기흥구 사은로 56 은성빌딩 201호</div>
+                <div id="copyright">Copyright © 365alba.com. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+</body>
+</html>

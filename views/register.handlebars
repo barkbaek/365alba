@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/authorization.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta name="date" content="2020-06-01" scheme="YYYY-MM-DD">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{published_date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body">
+    <div class="body-frame">
+        <div class="body-main">
+            <div id="authorization-frame">
+                <div id="authorization">
+                    <div id="authorization-title" class="animated swing">
+                        <a href="/">
+                            <img id="authorization-logo" src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                            <div id="logo-description">회원가입</div>
+                        </a>
+                    </div>
+                    <form id="authorization-form">
+                        <div class="radio-toolbar">
+                            <input type="radio" id="user" name="member-type" value="user" checked>
+                            <label for="user">개인회원</label>
+
+                            <input type="radio" id="company" name="member-type" value="company">
+                            <label for="company">기업회원</label>
+                        </div>
+                        <label for="email">이메일</label>
+                        <input id="email" type="email" placeholder="이메일">
+                        <label for="password1">비밀번호</label>
+                        <input id="password1" type="password" placeholder="비밀번호">
+                        <input id="password2" type="password" placeholder="비밀번호">
+                        <div id="password-description">
+                            <div id="password-alphabet-checker" class="format-checker-red">최소한 하나의 영어 알파벳</div>
+                            <div id="password-number-checker" class="format-checker-red">최소한 하나의 숫자</div>
+                            <div id="password-special-checker" class="format-checker-red">최소한 하나의 특수문자</div>
+                            <div id="password-length-checker" class="format-checker-red">최소 길이는 8</div>
+                        </div>
+                        <input id="authorization-submit" type="submit" value="회원가입">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/register.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+#service {
+    width:100%;
+    text-align:left;
+    padding:10px;
+}
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px;
+    width:100%;
+}
+#event-winner {
+    clear:both;
+}
+#event-title {
+    padding:10px;
+    margin-bottom:10px;
+    font-size:18px;
+    border-bottom:1px solid #ebebeb;
+}
+#event-content {
+    padding:10px;
+    white-space:pre;
+}
+#count-view {
+    float:right;
+    margin:10px;
+}

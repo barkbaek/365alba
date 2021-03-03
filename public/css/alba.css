@@ -1,0 +1,115 @@
+#albasite {
+    width:100%;
+    max-width:990px;
+    margin:0 auto;
+}
+#detail-search-form {
+    width:100%;
+    text-align:left;
+    padding:0 10px 10px 10px;
+    border:1px solid #ababab;
+    font-size:12px;
+}
+#detail-search-submit {
+    width:auto;
+    margin-top:10px;
+    display:block;
+}
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px 0;
+    width:100%;
+}
+label,
+.label {
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+input[type="radio"] {
+    width:auto;
+}
+label.inline-label {
+    width:auto;
+    display:inline-block;
+    margin-right:10px;
+    margin-top:0;
+    margin-bottom:0;
+}
+select {
+    margin-bottom:0;
+    font-size:12px;
+}
+input[type="checkbox"] {
+    margin-bottom:0;
+}
+#age,
+#salary {
+    width:150px;
+    display:inline-block;
+    margin-right:5px;
+}
+#alba-info {
+    width:100%;
+    text-align:left;
+}
+.alba {
+    text-align:left;
+    border-left:1px solid #ebebeb;
+    border-right:1px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
+    padding:10px;
+    clear:both;
+    cursor:pointer;
+}
+.alba:hover {
+    background:#ebebeb;
+}
+.alba-created-at,
+.alba-address {
+    font-size:11px;
+    color:#787878;
+}
+.alba-created-at {
+    margin-bottom:5px;
+}
+.alba-title {
+    font-size:13px;
+    margin:5px 0;
+}
+.alba-company-name{
+    font-size:13px;
+    font-weight:bold;
+}
+.alba-scrap,
+.alba-salary,
+.alba-work-time {
+    float:right;
+    font-size:12px;
+}
+.alba-scrap img{
+    width:18px;
+    height:18px;
+}
+.alba-scrap {
+    margin-left:10px;
+}
+.alba-salary {
+    margin-right:10px;
+    color:#1E3BA0;
+}
+#pagination-box {
+    width:100%;
+    text-align:center;
+    margin:10px auto;
+}
+.pagination-a {
+    margin:0 5px;
+    display:inline-block;
+}
+.pagination {
+    display:inline-block;
+    padding:10px 15px;
+    border:1px solid #ebebeb;
+}

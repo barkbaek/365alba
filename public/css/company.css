@@ -1,0 +1,114 @@
+.menu {
+    margin-bottom:0;
+}
+#company {
+    width:100%;
+    max-width:990px;
+    margin:10px auto;
+}
+#company-top {
+    width:100%;
+    clear:both;
+}
+#company-main {
+    width:100%;
+    border:1px solid #ebebeb;
+    border-top:2px solid #000000;
+    clear:both;
+    margin-bottom:8px;
+    text-align:left;
+}
+#total-applicants {
+    padding:15px 20px;
+    border-bottom:1px solid #ebebeb;
+    font-size:20px;
+}
+#company-main-top {
+    clear:both;
+    padding:15px 20px;
+}
+.alba-scrap {
+    float:right;
+    font-size:12px;
+    margin-left:10px;
+}
+.alba-scrap img{
+    width:24px;
+    height:24px;
+}
+.company-main-middle {
+    padding:0 20px;
+    border-top:1px solid #ebebeb;
+}
+input[type="button"].right-item {
+    float:right;
+    display:inline-block;
+    width:auto;
+    margin:8px 0 8px 8px;
+    padding:10px 12px;
+}
+#created-at,
+#count-view {
+    text-align:left;
+    color:#787878;
+    font-size:12px;
+}
+#count-view {
+    margin-top:8px;
+}
+#company-name {
+    margin:8px 0;
+}
+#title {
+    font-size:24px;
+}
+.title {
+    border-top:1px solid #ebebeb;
+    padding:15px 20px;
+    font-size:20px;
+    width:100%;
+}
+.label {
+    color:#787878;
+    margin-right:20px;
+}
+.item {
+    margin:12px 0;
+    font-size:15px;
+}
+#button-box {
+    text-align:left;
+}
+input[type="button"].button {
+    display:inline-block;
+    width:auto;
+    margin:4px;
+    padding:10px 12px;
+}
+.btn-wrapper {
+    width:100%;
+    margin:10px 0 5px 0;
+    text-align:center;
+}
+#btn-remove,
+#btn-deadline,
+.btn-cancel {
+    display:inline-block;
+    margin:10px 10px 0 10px;
+    width:auto;
+    padding:8px 15px;
+    font-size:12px;
+    line-height:1.3em;
+    background:#58bcea;
+    border-color:#58bcea;
+    border:0;
+    color:#ffffff;
+    -webkit-appearance:none;
+    cursor:pointer;
+}
+#btn-remove:hover,
+#btn-deadline:hover,
+.btn-cancel:hover{
+    background: #4eb2e0;
+    color:#ffffff;
+}

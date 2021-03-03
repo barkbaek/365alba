@@ -1,0 +1,73 @@
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px;
+    width:100%;
+    text-align:left;
+}
+.notice {
+    border:1px solid #ebebeb;
+    border-top:0;
+    padding:10px;
+    text-align:left;
+    clear:both;
+}
+.finished {
+    color: #58bcea;
+    font-weight:bold;
+    margin-right:5px;
+}
+.company-name {
+    font-size:12px;
+
+}
+.notice-title {
+    font-weight:bold;
+    font-size:14px;
+    margin:5px auto;
+}
+.right {
+    float:right;
+    width:100px;
+    font-size:11px;
+    margin-left:10px;
+    text-align:right;
+}
+.created-at {
+    font-size:12px;
+    margin-bottom:5px;
+}
+.applicants {
+    text-decoration:underline;
+    font-size:18px;
+}
+.address {
+    margin-bottom:5px;
+    font-size:12px;
+}
+.finish-date {
+    font-size:12px;
+    margin-bottom:5px;
+}
+#footer {
+    margin-top:20px;
+}
+#pagination-box {
+    width:100%;
+    text-align:center;
+    margin:10px auto;
+}
+.pagination-a {
+    margin:0 5px;
+    display:inline-block;
+}
+.pagination {
+    display:inline-block;
+    padding:10px 15px;
+    border:1px solid #ebebeb;
+}
+.company-name,
+.notice-title,
+.applicants {
+    display:inline-block;
+}

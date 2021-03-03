@@ -1,0 +1,23 @@
+#top-logo-wrapper {
+    height:auto;
+    clear:both;
+}
+#top-logo-wrapper a {
+    float:left;
+    margin:0 20px;
+}
+#top-logo-wrapper span {
+    font-size:24px;
+    vertical-align:middle;
+    margin-left:8px;
+}
+#service {
+    width:100%;
+    max-width:990px;
+    margin:0 auto;
+}
+@media (min-width: 768px) {
+    #top-main {
+        margin:10px auto;
+    }
+}

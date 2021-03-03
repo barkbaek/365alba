@@ -1,0 +1,116 @@
+#site {
+    width:100%;
+    max-width:990px;
+    margin:0 auto;
+    padding:10px;
+    text-align:left;
+    min-height:450px;
+}
+.menu {
+    border-bottom:1px solid #ebebeb;
+}
+.menu ul.menu-ul li.menu-li.selected {
+    color:#58bcea;
+    border-bottom:2px solid #58bcea;
+}
+#pagination-box {
+    width:100%;
+    text-align:center;
+    margin:10px auto;
+}
+.pagination-a {
+    margin:0 5px;
+    display:inline-block;
+}
+.pagination {
+    display:inline-block;
+    padding:10px 15px;
+    border:1px solid #ebebeb;
+}
+.title {
+    border-bottom:1px solid #ebebeb;
+    font-size:18px;
+    padding:10px;
+    width:100%;
+    text-align:left;
+    clear:both;
+}
+.alba,
+.resume,
+.article {
+    text-align:left;
+    border-bottom:1px solid #ebebeb;
+    padding:10px;
+    clear:both;
+    cursor:pointer;
+}
+.alba:hover,
+.resume:hover,
+.article:hover {
+    background:#ebebeb;
+}
+.resume {
+    display:table;
+}
+.resume-left {
+    display:table-cell;
+    width:100px;
+}
+.photo {
+    width:100px;
+    height:100px;
+    border:1px solid #ebebeb;
+    display:inline-block;
+}
+.resume-right {
+    display:table-cell;
+    padding-left:10px;
+    vertical-align:top;
+    width:100%;
+}
+.alba-created-at,
+.created-at,
+.updated-at,
+.alba-address {
+    font-size:11px;
+    color:#787878;
+}
+.alba-created-at,
+.created-at,
+.updated-at {
+    margin-bottom:5px;
+}
+.alba-title,
+.resume-title,
+.article-title {
+    font-size:15px;
+    margin:5px 0;
+}
+.article-title{
+    font-weight:normal;
+    padding:0;
+}
+.resume-name,
+.alba-company-name{
+    font-size:13px;
+    font-weight:bold;
+}
+.alba-scrap,
+.alba-salary,
+.alba-work-time {
+    float:right;
+    font-size:12px;
+}
+.alba-salary {
+    margin-right:10px;
+    color:#1E3BA0;
+}
+.alba-near-subway,
+.alba-near-university,
+.resume-age,
+.resume-work-place,
+.article-nick-name,
+.article-tags {
+    font-size:12px;
+    margin-top:5px;
+}

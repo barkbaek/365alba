@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/service.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/alba_encyclopedia.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta name="date" content="2020-06-01" scheme="YYYY-MM-DD">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{published_date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-css-version="{{css_version}}" data-js-version="{{js_version}}">
+<div class="body">
+    <!-- Mobile menu -->
+    <div id="mobile-menu">
+        <a href="/">
+            <div id="mobile-menu-middle-logo">
+                <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}">
+            </div>
+        </a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <!-- Mobile right menu -->
+    <div id="mobile-right-menu">
+        <div class="close">
+            <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+        </div>
+        <div class="login-item">
+            {{#if is_loggedin}}
+                <div class="login-item-description">
+                    <span>{{nick_name}}</span>님
+                    <div style="margin-top:10px;">&nbsp;<span>포인트</span>{{points}}&nbsp;<a href="/charge-points" style="text-decoration:underline;">충전하기</a></div>
+                </div>
+                <a href="/logout">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그아웃</span>
+                    </div>
+                </a>
+            {{else}}
+                <div class="login-item-description">로그인 해주세요.</div>
+                <a href="/login">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그인</span>
+                    </div>
+                </a>
+            {{/if}}
+            <div class="login-item-bottom">
+                <div class="forgot-password">
+                    <a href="/forgot-password"><span>비밀번호 찾기</span></a>
+                </div>
+                <div class="register">
+                    <a href="/register"><span>회원가입</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="service-title">
+                <span>채용정보</span>
+            </div>
+            {{#each menu1}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>인재정보</span>
+            </div>
+            {{#each menu2}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바플러스</span>
+            </div>
+            {{#each menu3}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바백과</span>
+            </div>
+            {{#each menu4}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>이벤트</span>
+            </div>
+            {{#each menu5}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            {{#if is_loggedin}}
+                {{#if is_user}}
+                    <div class="service-title">
+                        <span>개인서비스</span>
+                    </div>
+                    {{#each menu6}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{else}}
+                    <div class="service-title">
+                        <span>기업서비스</span>
+                    </div>
+                    {{#each menu7}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="body-frame">
+        <div class="body-main">
+            <!-- Top logo and search feature -->
+            <div id="top">
+                <div id="top-most-frame" class="desktop-only">
+                    <div id="top-most">
+                        {{#if is_loggedin}}
+                            <div class="top-most-item"><a href="/logout">로그아웃</a></div>
+                            <div class="top-most-item"><a href="/member-information">회원정보</a></div>
+                        {{else}}
+                            <div class="top-most-item"><a href="/register">회원가입</a></div>
+                            <div class="top-most-item"><a href="/login">로그인</a></div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div id="top-main">
+                    <div id="top-logo-wrapper">
+                        <a href="/">
+                            <img id="top-logo" class="animated swing" src="{{aws_s3_url}}/icons/logo.jpeg" alt="365알바" title="365알바">
+                            <span>4대사회보험</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu -->
+            <div class="menu desktop-only">
+                <ul class="menu-ul">
+                    <a href="/minimum-wages"><li class="menu-li">최저임금</li></a>
+                    <a href="/four-major-social-insurance"><li class="menu-li">4대사회보험</li></a>
+                    <a href="/youth-labor-rights-center"><li class="menu-li">청소년근로권익센터</li></a>
+                    <a href="/prevent-employment-fraud"><li class="menu-li">취업사기예방</li></a>
+                    <a href="/wage-deferred-business-owners"><li class="menu-li">임금체불사업주</li></a>
+                </ul>
+            </div>
+            <div id="service">
+                <div class="title">4대사회보험</div>
+                - 실업, 산업재해 등 사회적 위험으로부터 국민의 안정적 삶을 보장하기 위한 사회보장제도이다.<br>
+                - 일생동안 누구에게나 있을 수 있는 질병이나 상해, 실업, 노령 등 사회적 위험에 대비하여 부담을 덜어주고, 안정적인 노후를 준비할 수 있도록 도와준다.<br>
+                - 4대 사회보험은 고용보험/산재보험/국민연금/건강보험을 말하며, 아르바이트생도 근로자로서 요건에 해당하는 경우 의무가입 대상이다.<br>
+                <br>
+                고용보험: 실업예방, 고용촉진, 직업지도 및 소개, 근로자 직업능력개발<br>
+                산재보험: 업무상 재해 보상, 재해근로자 재활 및 근로자 복지증진<br>
+                국민연금: 국민의 노령, 장해에 대한 연금지급으로 생활안정 및 복지증진<br>
+                건강보험: 국민의 질병/부상 예방, 진단, 치료, 재활, 건강 증진에 대한 보험서비스<br>
+                <br>
+                산재보험은 4일 이상 치료가 필요하다면 산재 신청이 가능하다.<br>
+                이미 사고가 난 경우 미가입 상태라도 가입대상인 경우에는 산재 신청이 가능하다.<br>
+                (미가입재해 발생 시 근로자에게는 불이익 없이 산재 보상을 받을 수 있지만, 사업주에게는 급여징수금이 부과될 수 있다.)<br>
+                산재보험은 연령, 학생 여부에 상관없이 신청이 가능하다.<br>
+                국적, 정규직 상관없이 산재 신청이 가능하다.<br>
+                (산재보험 당연 가입 사업장이 아닌 소규모 사업장이나, 개인 건설공사도 가입 신청하면 산재보험 혜택을 받을 수 있다.<br>
+                <br>
+                <div class="label">업무상 재해가 발생한 경우</div>
+                1) 응급조치 후 병원으로 간다.<br>
+                2) 사업주에게 사고에 대해 말한다.<br>
+                3) 병원 업무과를 통해 "(최초)요양급여신청서"를 작성 후, 회사(사업주) 확인(서명 또는 날인)을 받아 근로복지공단에 제출한다.<br>
+                (회사(사업주)가 확인(서명 또는 날인)을 거부하는 경우에는 날인 없이 제출 가능하다.)<br>
+                4) 공단에서 업무상 재해가 맞는지 확인 후 요양승인 여부를 결정 및 알려준다.<br>
+            </div>
+            <!-- Footer -->
+            <div id="footer">
+                <!--
+                <a href="/announcement">
+                    <div class="footer-item">공지사항</div>
+                </a>
+                <a href="/policy">
+                    <div class="footer-item">데이터 정책</div>
+                </a>
+                <a href="/terms">
+                    <div class="footer-item">서비스 이용 약관</div>
+                </a>-->
+                <div>상호: 365알바 대표: 백병화 사업자번호: 183-11-01464</div>
+                <div>주소: 경기도 용인시 기흥구 사은로 56 은성빌딩 201호</div>
+                <div id="copyright">Copyright © 365alba.com. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+</body>
+</html>

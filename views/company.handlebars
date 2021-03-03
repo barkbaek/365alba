@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="{{lang}}">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/company.css{{css_version}}">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css{{css_version}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="fragment" content="!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--[if lte IE 8]>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta name="title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="kewords" content="{{keywords}}">
+    <meta name="author" content="{{title}}" />
+    <meta name="robots" content="index,follow" />
+    <meta name="google" content="notranslate">
+    <meta name="date" content="2020-06-01" scheme="YYYY-MM-DD">
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{description}}">
+    <meta itemprop="image" content="{{image}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{twitter_site}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="{{twitter_site}}">
+    <meta name="twitter:image" content="{{image}}">
+    <meta property="og:site_name" content="{{site_name}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{url}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="article:published_time" content="{{published_date}}" />
+    <meta property="article:modified_time" content="{{date}}" />
+    <title>{{title}}</title>
+    <link rel="icon" sizes="32x32" href="/favicon.ico{{css_version}}">
+    <script type="text/javascript" src="/js/sub/check.js{{js_version}}"></script>
+</head>
+<body data-css-version="{{css_version}}" data-js-version="{{js_version}}" created-at="{{created_at}}" is-loggedin="{{is_loggedin}}">
+<div class="body">
+    <!-- Mobile menu -->
+    <div id="mobile-menu">
+        <a href="/">
+            <div id="mobile-menu-middle-logo">
+                <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}">
+            </div>
+        </a>
+        <img id="menu-btn-mobile" src="{{aws_s3_url}}/icons/menu.png{{css_version}}">
+    </div>
+    <!-- Mobile right menu -->
+    <div id="mobile-right-menu">
+        <div class="close">
+            <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+        </div>
+        <div class="login-item">
+            {{#if is_loggedin}}
+                <div class="login-item-description">
+                    <span>{{nick_name}}</span>님
+                    <div style="margin-top:10px;">&nbsp;<span>포인트</span>{{points}}&nbsp;<a href="/charge-points" style="text-decoration:underline;">충전하기</a></div>
+                </div>
+                <a href="/logout">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그아웃</span>
+                    </div>
+                </a>
+            {{else}}
+                <div class="login-item-description">로그인 해주세요.</div>
+                <a href="/login">
+                    <div class="login-item-box">
+                        <img src="{{aws_s3_url}}/icons/logo.jpeg{{css_version}}" alt="365알바" title="365알바">
+                        <span>로그인</span>
+                    </div>
+                </a>
+            {{/if}}
+            <div class="login-item-bottom">
+                <div class="forgot-password">
+                    <a href="/forgot-password"><span>비밀번호 찾기</span></a>
+                </div>
+                <div class="register">
+                    <a href="/register"><span>회원가입</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="service-title">
+                <span>채용정보</span>
+            </div>
+            {{#each menu1}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>인재정보</span>
+            </div>
+            {{#each menu2}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바플러스</span>
+            </div>
+            {{#each menu3}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>알바백과</span>
+            </div>
+            {{#each menu4}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            <div class="service-title">
+                <span>이벤트</span>
+            </div>
+            {{#each menu5}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+            {{#if is_loggedin}}
+                {{#if is_user}}
+                    <div class="service-title">
+                        <span>개인서비스</span>
+                    </div>
+                    {{#each menu6}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{else}}
+                    <div class="service-title">
+                        <span>기업서비스</span>
+                    </div>
+                    {{#each menu7}}<a href="{{url}}"><div class="service-item">{{name}}</div></a>{{/each}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="body-frame">
+        <div class="body-main">
+            <!-- Top logo and search feature -->
+            <div id="top">
+                <div id="top-most-frame" class="desktop-only">
+                    <div id="top-most">
+                        {{#if is_loggedin}}
+                            <div class="top-most-item"><a href="/logout">로그아웃</a></div>
+                            <div class="top-most-item"><a href="/member-information">회원정보</a></div>
+                        {{else}}
+                            <div class="top-most-item"><a href="/register">회원가입</a></div>
+                            <div class="top-most-item"><a href="/login">로그인</a></div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div id="top-main">
+                    <div id="top-logo-wrapper">
+                        <a href="/">
+                            <img id="top-logo" class="animated swing" src="{{aws_s3_url}}/icons/logo.jpeg" alt="365알바" title="365알바">
+                        </a>
+                    </div>
+                    <div id="top-search">
+                        <form id="search">
+                            <div id="search-middle">
+                                <input id="search-input" type="text" placeholder="" value="">
+                            </div>
+                            <div id="search-right">
+                                <input id="search-submit" type="submit" value="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu -->
+            <div class="menu desktop-only">
+                <ul class="menu-ul">
+                    {{#if is_loggedin}}
+                        {{#if is_user}}
+                            <li class="menu-li menu-right-li"><a href="/my-resume">내이력서</a></li>
+                        {{else}}
+                            <li class="menu-li menu-right-li"><a href="/register-notice">공고등록</a></li>
+                        {{/if}}
+                    {{/if}}
+                    <li id="menu-desktop-1" class="menu-li">
+                        채용정보
+                        <!-- Menu1 -->
+                        <div id="menu-overlay-1" class="menu-overlay">
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">일반채용</li>
+                                <a href="/alba/today"><li class="menu-overlay-item-content">오늘의알바</li></a>
+                                <a href="/alba/express"><li class="menu-overlay-item-content">급구알바</li></a>
+                            </ul>
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">지역별</li>
+                                <a href="/alba/area"><li class="menu-overlay-item-content">지역별알바</li></a>
+                            </ul>
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">직종별</li>
+                                <a href="/alba/business-type"><li class="menu-overlay-item-content">업직종알바</li></a>
+                                <a href="/alba/day"><li class="menu-overlay-item-content">일용직알바</li></a>
+                            </ul>
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">대상별</li>
+                                <a href="/alba/teenagers"><li class="menu-overlay-item-content">청소년</li></a>
+                                <a href="/alba/university-students"><li class="menu-overlay-item-content">대학생</li></a>
+                                <a href="/alba/middle-aged-men"><li class="menu-overlay-item-content">중장년</li></a>
+                            </ul>
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">외국인</li>
+                                <a href="/alba/foreigners"><li class="menu-overlay-item-content">외국인</li></a>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="menu-desktop-2" class="menu-li">
+                        인재정보
+                        <!-- Menu2 -->
+                        <div id="menu-overlay-2" class="menu-overlay">
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">인재정보</li>
+                                <a href="/talented/area"><li class="menu-overlay-item-content">지역별인재</li></a>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="menu-desktop-3" class="menu-li">
+                        알바플러스
+                        <!-- Menu3 -->
+                        <div id="menu-overlay-3" class="menu-overlay">
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">알바플러스</li>
+                                <a href="/albaboard"><li class="menu-overlay-item-content">알바톡톡</li></a>
+                                <a href="/ceoboard"><li class="menu-overlay-item-content">사장님게시판</li></a>
+                                <a href="/albareview"><li class="menu-overlay-item-content">알바후기</li></a>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="menu-desktop-4" class="menu-li">
+                        알바백과
+                        <!-- Menu4 -->
+                        <div id="menu-overlay-4" class="menu-overlay">
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">알바백과</li>
+                                <a href="/minimum-wages"><li class="menu-overlay-item-content">최저임금</li></a>
+                                <a href="/four-major-social-insurance"><li class="menu-overlay-item-content">4대사회보험</li></a>
+                                <a href="/youth-labor-rights-center"><li class="menu-overlay-item-content">청소년근로권익센터</li></a>
+                                <a href="/prevent-employment-fraud"><li class="menu-overlay-item-content">취업사기예방</li></a>
+                                <a href="/wage-deferred-business-owners"><li class="menu-overlay-item-content">임금체불사업주</li></a>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="menu-desktop-5" class="menu-li">
+                        이벤트
+                        <!-- Menu5 -->
+                        <div id="menu-overlay-5" class="menu-overlay">
+                            <ul class="menu-overlay-item">
+                                <li class="menu-overlay-item-title">이벤트</li>
+                                <a href="/events"><li class="menu-overlay-item-content">이벤트</li></a>
+                            </ul>
+                        </div>
+                    </li>
+                    {{#if is_loggedin}}
+                        {{#if is_user}}
+                            <li id="menu-desktop-6" class="menu-li">
+                                개인서비스
+                                <!-- Menu6 -->
+                                <div id="menu-overlay-6" class="menu-overlay">
+                                    <ul class="menu-overlay-item">
+                                        <li class="menu-overlay-item-title">개인서비스</li>
+                                        <a href="/my-resume"><li class="menu-overlay-item-content">내이력서</li></a>
+                                        <a href="/application-status"><li class="menu-overlay-item-content">지원현황</li></a>
+                                        <a href="/resume-reading-companies"><li class="menu-overlay-item-content">이력서열람기업</li></a>
+                                        <a href="/scrap-alba"><li class="menu-overlay-item-content">스크랩알바</li></a>
+                                        <a href="/manage-my-articles"><li class="menu-overlay-item-content">내가쓴글관리</li></a>
+                                        <a href="/charge-use-details"><li class="menu-overlay-item-content">유료이용내역</li></a>
+                                        <a href="/member-information"><li class="menu-overlay-item-content">회원정보</li></a>
+                                    </ul>
+                                </div>
+                            </li>
+                        {{else}}
+                            <li id="menu-desktop-7" class="menu-li">
+                                기업서비스
+                                <!-- Menu7 -->
+                                <div id="menu-overlay-7" class="menu-overlay">
+                                    <ul class="menu-overlay-item">
+                                        <li class="menu-overlay-item-title">기업서비스</li>
+                                        <a href="/register-notice"><li class="menu-overlay-item-content">공고등록</li></a>
+                                        <a href="/manage-notices"><li class="menu-overlay-item-content">공고·지원자관리</li></a>
+                                        <a href="/charged-products"><li class="menu-overlay-item-content">유료상품</li></a>
+                                        <a href="/scrap-alba"><li class="menu-overlay-item-content">스크랩알바</li></a>
+                                        <a href="/manage-my-articles"><li class="menu-overlay-item-content">내가쓴글관리</li></a>
+                                        <a href="/charge-use-details"><li class="menu-overlay-item-content">유료이용내역</li></a>
+                                        <a href="/member-information"><li class="menu-overlay-item-content">회원정보</li></a>
+                                    </ul>
+                                </div>
+                            </li>
+                        {{/if}}
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="menu mobile-only">
+                <ul class="menu-ul">
+                    <li class="menu-li"><a href="/alba/area">지역별알바</a></li>
+                    <li class="menu-li"><a href="/alba/business-type">업직종알바</a></li>
+                    <li class="menu-li"><a href="/alba/today">오늘의알바</a></li>
+                    <li class="menu-li"><a href="/alba/express">급구알바</a></li>
+                </ul>
+            </div>
+            <div id="company">
+                <div id="company-top">
+                    {{#if is_writer}}
+                        <input id="remove" class="right-item" type="button" value="삭제">
+                        {{#if is_no_deadline}}
+                            <input id="deadline" class="right-item" type="button" value="마감">
+                        {{/if}}
+                        <input id="edit" class="right-item" type="button" value="수정">
+                    {{/if}}
+                </div>
+                <div id="company-main">
+                    {{#if is_writer}}
+                        <div id="total-applicants"><a href="/applicants/{{id}}"><span class="label">전체지원자</span><span style="text-decoration:underline;">{{total_applicants}}명</span></a></div>
+                    {{/if}}
+                    {{#with doc}}
+                        <div id="company-main-top">
+                            <div class="alba-scrap" data-id="{{id}}"><img src="{{scrap_url}}"></div>
+                            <div id="created-at"></div>
+                            <div id="count-view">조회수&nbsp;{{count_view}}</div>
+                            <div id="company-name">{{company_name}}</div>
+                            <div id="title">{{title}}</div>
+                        </div>
+                        <div class="title">모집내용</div>
+                        <div class="company-main-middle">
+                            <div class="item"><span class="label">고용형태</span><span class="content">{{employment_type}}</span></div>
+                            <div class="item"><span class="label">업직종</span><span class="content">{{business_type_big}}&nbsp;{{business_type_small}}</span></div>
+                            <div class="item"><span class="label">모집인원</span><span class="content">{{the_number_of_recruitment}}명</span></div>
+                        </div>
+                        <div class="title">근무조건</div>
+                        <div class="company-main-middle">
+                            <div class="item"><span class="label">근무기간</span><span class="content">{{work_period}}</span></div>
+                            <div class="item"><span class="label">근무일</span><span class="content">{{work_start_year}}년&nbsp;{{work_start_month}}월&nbsp;{{work_start_day}}일&nbsp;~&nbsp;{{work_end_year}}년&nbsp;{{work_end_month}}월&nbsp;{{work_end_day}}일</span></div>
+                            <div class="item"><span class="label">근무요일</span><span class="content">{{#each work_days}}{{this}}&nbsp;{{/each}}</span></div>
+                            <div class="item"><span class="label">근무시간</span><span class="content">{{work_start_time}}&nbsp;~&nbsp;{{work_end_time}}</span></div>
+                            <div class="item"><span class="label">급여</span><span class="content">{{salary_type}}&nbsp;{{salary}}원</span></div>
+                        </div>
+                        <div class="title">지원조건</div>
+                        <div class="company-main-middle">
+                            <div class="item"><span class="label">성별</span><span class="content">{{sex}}</span></div>
+                            <div class="item"><span class="label">연령</span><span class="content">{{age_start}}세&nbsp;~&nbsp;{{age_end}}세</span></div>
+                            {{#if university_student}}
+                                <div class="item"><span class="label">대학생</span><span class="content">고용합니다.</span></div>
+                            {{/if}}
+                            {{#if disabled_person}}
+                                <div class="item"><span class="label">장애인</span><span class="content">고용합니다.</span></div>
+                            {{/if}}
+                            {{#if foreigner}}
+                                <div class="item"><span class="label">외국인</span><span class="content">고용합니다.</span></div>
+                            {{/if}}
+                            <div class="item"><span class="label">학력조건</span><span class="content">{{educational_background}}</span></div>
+                        </div>
+                        <div class="title">접수기간 및 방법</div>
+                        <div class="company-main-middle">
+                            <div class="item"><span class="label">마감일</span><span class="content">{{finish_year}}년&nbsp;{{finish_month}}월&nbsp;{{finish_day}}일</span></div>
+                            <div id="button-box">
+                                {{#if is_online}}
+                                    <input class="button" id="apply-online" type="button" value="온라인지원">
+                                {{/if}}
+                                {{#if is_email}}
+                                    <input class="button" id="apply-email" type="button" value="이메일지원">
+                                {{/if}}
+                                {{#if is_phone_message}}
+                                    <input class="button" id="apply-phone-message" type="button" value="전화문자지원">
+                                {{/if}}
+                            </div>
+                            {{#if is_homepage}}
+                                <div class="item"><span class="label">홈페이지</span><span class="content"><a target="_blank" href="{{homepage}}">{{homepage}}</a></span></div>
+                            {{/if}}
+                            {{#if is_visit}}
+                                <div class="item"><span class="label">바로방문</span><span class="content">방문 지원하세요.</span></div>
+                            {{/if}}
+                        </div>
+                        <div class="title">담당자 정보</div>
+                        <div class="company-main-middle">
+                            <div class="item"><span class="label">담당자명</span><span class="content">{{manager_name}}</span></div>
+                            <div class="item"><span class="label">이메일</span><span class="content">{{email}}</span></div>
+                            <div class="item"><span class="label">전화번호</span><span class="content">{{phone}}</span></div>
+                            <div class="item"><span class="label">팩스</span><span class="content">{{fax}}</span></div>
+                        </div>
+                        <div class="title">근무지 정보</div>
+                        <div class="company-main-middle">
+                            <div class="item"><span class="label">근무지 주소</span><span id="address" class="content">{{address_si}}&nbsp;{{address_goo}}&nbsp;{{address_dong}}&nbsp;{{address_detail}}</span></div>
+                            <div id="map" style="width:100%;height:350px;"></div>
+                            <div class="item"><span class="label">인근지하철</span><span class="content">{{near_subway}}</span></div>
+                            <div class="item"><span class="label">인근대학교</span><span class="content">{{near_university}}</span></div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+            <!-- Footer -->
+            <div id="footer">
+                <!--
+                <a href="/announcement">
+                    <div class="footer-item">공지사항</div>
+                </a>
+                <a href="/policy">
+                    <div class="footer-item">데이터 정책</div>
+                </a>
+                <a href="/terms">
+                    <div class="footer-item">서비스 이용 약관</div>
+                </a>-->
+                <div>상호: 365알바 대표: 백병화 사업자번호: 183-11-01464</div>
+                <div>주소: 경기도 용인시 기흥구 사은로 56 은성빌딩 201호</div>
+                <div id="copyright">Copyright © 365alba.com. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+    <!-- 마감 버튼 프롬프트 -->
+    <div id="deadline-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-main">
+                        마감하시겠습니까?
+                        <div class="btn-wrapper">
+                            <div class="btn-cancel">취소</div>
+                            <div id="btn-deadline">마감</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right">
+            <div class="close">
+                <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+            </div>
+        </div>
+    </div>
+    <!-- 삭제 버튼 프롬프트 -->
+    <div id="remove-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-main">
+                        삭제하시겠습니까?
+                        <div class="btn-wrapper">
+                            <div class="btn-cancel">취소</div>
+                            <div id="btn-remove">삭제</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right">
+            <div class="close">
+                <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+            </div>
+        </div>
+    </div>
+    <!-- 로그인 요청 프롬프트 -->
+    <div id="request-login-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-main">
+                        로그인 해주세요.
+                        <div id="btn-go-to-login-wrapper">
+                            <a href="/login">
+                                <div id="btn-go-to-login">로그인</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right">
+            <div class="close">
+                <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+            </div>
+        </div>
+    </div>
+    <!-- 이메일지원 프롬프트 -->
+    <div id="apply-email-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-main">
+                        이메일 지원해주세요.<br>
+                        이메일: {{email}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right">
+            <div class="close">
+                <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+            </div>
+        </div>
+    </div>
+    <!-- 전화문자지원 프롬프트 -->
+    <div id="apply-phone-message-prompt" class="prompt">
+        <div class="prompt-left">
+            <div>
+                <div>
+                    <div class="prompt-main">
+                        전화 혹은 문자 지원해주세요.<br>
+                        전화번호: {{phone}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt-right">
+            <div class="close">
+                <img src="{{aws_s3_url}}/icons/close.png{{css_version}}">
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="overlay2"></div>
+    <div id="loader"></div>
+</div>
+<script type="text/javascript" src="/js/sub/jquery.min.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/global.js{{js_version}}"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3965d8a61e46a5bdf2c709aa1de22705&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="/js/sub/map.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/main/company.js{{js_version}}"></script>
+<script type="text/javascript" src="/js/sub/menu.js{{js_version}}"></script>
+</body>
+</html>
